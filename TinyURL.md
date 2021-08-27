@@ -52,3 +52,5 @@ b. Hash-Based Partitioning: consistent hashing
 1. Clients <-> Application servers
 2. Application servers <-> database servers
 3. Application servers <-> cache servers
+
+### Purging or DB cleanup
