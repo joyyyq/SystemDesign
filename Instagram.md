@@ -1,19 +1,21 @@
-# TinyURL
-URL shortening is used to optimize links across devices, track individual links to analyze audience, measure ad campaigns’ performance, or hide affiliated original URLs.
+# Instagram
+Instagram is a social networking service that enables its users to upload and share their photos and videos with other users. 
+
+Users can choose to share information either publicly or privately.
+
+Users can share through many other social networking platforms, such as Facebook, Twitter, Flickr, and Tumblr.
 
 ## Step 1: Requirements clarifications
 ### Functional Requirements:
-1. generate a shorter and unique alias of the given URL
-2. the short link redirect to the same place as the original link
-3. users have the option to pick a custom short link
-4. links expire after a standard default or user-specified timespan
+1. users can upload/download/view photos
+2. users can search based on photo/video titles
+3. users can follow other users
+4. system should generate and display a user's News Feed consisting of top photos from all the people the user follows
 ### Non-Functional Requirements:
 1. highly available
-2. low latency 
-3. secure (not guessable/predictable)
-### Extended Requirements:
-1. Analytics; e.g., how many times a redirection happened?
-2. Accessible (through REST APIs by other services)
+2. low latency (200ms for News Feed generation)
+3. consistency can take a hit in the interest of availability
+3. highly reliable (never lost uploaded photo or video)
 
 ## Step 2: Back-of-the-envelope estimation
 - Traffic: read-heavy, assume R(redirect):W(generate new short link) = 100
