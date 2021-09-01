@@ -12,37 +12,27 @@ Users can share through many other social networking platforms, such as Facebook
 3. users can follow other users
 4. system should generate and display a user's News Feed consisting of top photos from all the people the user follows
 ### Non-Functional Requirements:
-1. highly available
+1. highly available (practically, users can upload as many photos as they like; efficient management of storage is crucial)
 2. low latency (200ms for News Feed generation)
 3. consistency can take a hit in the interest of availability
 3. highly reliable (never lost uploaded photo or video)
 
 ## Step 2: Back-of-the-envelope estimation
-- Traffic: read-heavy, assume R(redirect):W(generate new short link) = 100
-- Storage:
-- Bandwidth:
-- Memory: 80-20 rule, meaning 20% of URLs generate 80% of traffic => cache these 0%
+- assume 500M total users, 1M daily active users
+- 2M new photos/day, 23 new photos/sec
+- avg photo size = 200KB
+- space/day = 2M * 200KB = 400GB
+- space/10 yrs = 400GB * 365 * 10 = 1425TB
 
 ## Step 3: System interface definition
-explicitly state what is expected from the system
-
-createURL(api_dev_key, original_url, custom_alias=None, user_name=None, expire_date=None)
-
-deleteURL(api_dev_key, url_key)
 
 ## Step 4: Defining data model
-- billions of records
-- each small
-- no relationships
-- read-heavy
+Database Schema: Photo, User, UserFollow
 
-Database Schema: one for URL mappings, one for users
-
-NoSQL store like DynamoDB, Cassandra or Riak - also easier to scale
+stoer in a distributed file storage like HDFS or S3 to enjoy the benefits offered by NoSQL
 
 ## Step 5: High-level design
-a. Encoding actual URL#
-b. Generating keys offline (KGS) cons: single point of failutre fix: add a standby replica
+
 
 ## Step 6: Detailed design
 
