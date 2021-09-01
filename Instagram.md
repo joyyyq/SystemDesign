@@ -18,7 +18,7 @@ Users can share through many other social networking platforms, such as Facebook
 3. highly reliable (never lost uploaded photo or video)
 
 ## Step 2: Back-of-the-envelope estimation
-- assume 500M total users, 1M daily active users
+- assume 500M total users, 1M daily active users (DAU)
 - 2M new photos/day, 23 new photos/sec
 - avg photo size = 200KB
 - space/day = 2M * 200KB = 400GB
