@@ -36,11 +36,12 @@ Cloud file storage enables users to store their data on remote servers. Usually,
 ## Step 4: Defining data model
 
 ## Step 5: High-level design
-- Block servers work with clients to upload/download files from cloud storage
-- metadata servers keep metadata of files updated in database (information like File Name, File Size, Directory, etc., and who this file is shared with)
-- synchronization servers handle the workflow of notifying clients about different changes for synchronization
+- Block servers: work with clients to upload/download files from cloud storage
+- Metadata servers: keep metadata of files updated in database (information like File Name, File Size, Directory, etc., and who this file is shared with)
+- Synchronization servers: handle the workflow of notifying clients about different changes for synchronization
 
 ## Step 6: Detailed design
+a. Client
 
 ## Step 7: Identifying and resolving bottlenecks
 ### Data Partitioning and Replication
